@@ -7,27 +7,32 @@ pipeline {
     stages {
         stage('Init') {
             steps {
+                // Initialize Terraform
                 sh 'terraform init'
             }
         }
         stage('Validate') {
             steps {
+                // Validate the Terraform configuration
                 sh 'terraform validate'
             }
         }
         stage('Apply') {
             steps {
+                // Apply the Terraform changes
                 sh 'terraform apply --auto-approve'
             }
         }
     }
 }
 ```
-This script uses the `agent any` agent, which means that any available agent can run the pipeline. The pipeline has three stages:
+This pipeline script will run the following commands in each stage:
 
-1. `Init`: This stage runs the `terraform init` command to initialize the Terraform environment.
-2. `Validate`: This stage runs the `terraform validate` command to validate the Terraform configuration.
-3. `Apply`: This stage runs the `terraform apply --auto-approve` command to apply the Terraform changes. The `--auto-approve` flag automatically approves any changes that are made during the apply operation.
+1. `terraform init`: Initializes Terraform and creates a new working directory.
+2. `terraform validate`: Validates the Terraform configuration and ensures that it is correct and complete.
+3. `terraform apply --auto-approve`: Applies the Terraform changes to the AWS infrastructure, using the `auto-approve` flag to automatically approve any changes that are required.
 
-You can save this script as a file (e.g., `terraform.pipeline`) and then run it in Jenkins using the `Pipeline` job type.
-//Build Number 66
+You can save this script as a file (e.g., `terraform-pipeline.groovy`) and then use Jenkins to run the script and execute the Terraform commands.
+
+I hope this helps! Let me know if you have any other questions.
+//Build Number 67

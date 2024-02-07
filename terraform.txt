@@ -14,4 +14,4 @@ resource "aws_instance" "example" {
 Please note that this script only provisions an EC2 instance and does not include any other resources or configurations. If you need additional resources or configurations, please let me know and I can assist you with those as well.
 
 Is there anything else you would like to add or modify in this script?
-#Build Number 66
+#Build Number 67
