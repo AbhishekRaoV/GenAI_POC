@@ -1,20 +1,15 @@
-#!/bin/bash
-
-# Initialize Terraform
-terraform init
-
-# Validate the configuration
-terraform validate
-
-# Apply the changes with --auto-approve
-terraform apply --auto-approve
-#!/bin/bash
-
-# Initialize Terraform
-terraform init
-
-# Validate the configuration
-terraform validate
-
-# Apply the changes with --auto-approve
-terraform apply --auto-approve /path/to/config.tf
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/hashed/terraform-aws-eks.git'
+            }
+        }
+        stage('Terraform Apply') {
+            steps {
+                sh ' Terraform apply --auto-approve'
+            }
+        }
+    }
+}

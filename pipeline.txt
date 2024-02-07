@@ -1,29 +1,21 @@
-
-Here is a Jenkins pipeline script without any headings, description, notes to provision an AWS EC2 instance using Terraform:
+Jenkins Pipeline Script:
 ```bash
-#!/bin/bash
-
-# Initialize Terraform
-terraform init
-
-# Validate the configuration
-terraform validate
-
-# Apply the changes with --auto-approve
-terraform apply --auto-approve
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/hashed/terraform-aws-eks.git'
+            }
+        }
+        stage('Terraform Apply') {
+            steps {
+                sh ' Terraform apply --auto-approve'
+            }
+        }
+    }
+}
 ```
-This script will initialize Terraform, validate the configuration, and apply the changes to provision an AWS EC2 instance using the `aws` provider. The `--auto-approve` flag is used to automatically approve any infrastructure changes made by Terraform.
+This is a Jenkinsfile that defines a pipeline with two stages: "Checkout" and "Terraform Apply". The "Checkout" stage uses Git to retrieve the code from the specified GitHub repository. The "Terraform Apply" stage runs the Terraform apply command with the --auto-approve option to automatically approve any changes made by the Terraform script.
 
-Note that this script assumes you have already created a Terraform configuration file with the necessary settings for your AWS EC2 instance. You will need to provide the path to this configuration file as an argument to the `terraform` command. For example:
-```bash
-#!/bin/bash
-
-# Initialize Terraform
-terraform init
-
-# Validate the configuration
-terraform validate
-
-# Apply the changes with --auto-approve
-terraform apply --auto-approve /path/to/config.tf
-```
+Please note that this is just an example, you should adjust the repository URL and the terraform command according to your needs.
