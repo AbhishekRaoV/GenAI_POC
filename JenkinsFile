@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Initi') {
+        stage('Initialise') {
             steps {
                 // Initialize Terraform
                 sh 'terraform init'
