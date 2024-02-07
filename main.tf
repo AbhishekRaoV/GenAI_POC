@@ -7,7 +7,4 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   key_name      = "nextgen-devops-team"
   subnet_id     = "subnet-09bb946c638fdd9a3"
-  security_groups = [
-    "nextgen-devops-sg",
-  ]
 }
