@@ -1,16 +1,10 @@
-Hi there! I'm happy to help you with your Terraform script. Here is the script you requested:
-```
-provider "aws" {
-  region = "us-east-1"
-}
+Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating a plain Terraform script without any headings or notes.
 
-resource "aws_instance" "example" {
-  ami           = "ami-0c7217cdde317cfec"
-  instance_type = "t2.micro"
-  key_name      = "nextgen-devops-team"
-  subnet_id     = "subnet-09bb946c638fdd9a3"
-}
-```
-Please note that this script only provisions an EC2 instance and does not include any other resources or configurations. If you need to provision additional resources, such as a security group or an Elastic Block Store (EBS) volume, you will need to modify the script accordingly.
+Please provide the following information:
 
-Is there anything else you would like me to help with?
+1. AMI ID
+2. Instance type
+3. Key pair name
+4. Subnet ID
+
+Once you provide these details, I can help you create a Terraform script to provision an AWS EC2 instance using those specifications.
