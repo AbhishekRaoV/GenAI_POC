@@ -1,4 +1,4 @@
-Here is a plain Terraform script without any headings, description, or notes to provision an AWS EC2 instance using the provided details:
+Hello Here is a plain Terraform script without any headings, description, or notes to provision an AWS EC2 instance using the provided details:
 ```
 provider "aws" {
   region = "us-east-1"
