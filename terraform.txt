@@ -1,0 +1,3 @@
+Hello! I'm here to help you with your Terraform script. What would you like me to do?
+Please provide the script as plain text, without any headings or descriptions.
+###
