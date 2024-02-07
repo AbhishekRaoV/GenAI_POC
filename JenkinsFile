@@ -1,21 +1,36 @@
-pipeline {
-    agent any
+#!/bin/bash
 
-    stages {
-        stage('Init') {
-            steps {
-                sh 'terraform init'
-            }
-        }
-        stage('Validate') {
-            steps {
-                sh 'terraform validate'
-            }
-        }
-        stage('Apply') {
-            steps {
-                sh 'terraform apply'
-            }
-        }
-    }
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c7217cdde317cfec"
+  instance_type = "t2.micro"
+  key_name      = "nextgen-devops-team"
+  subnet_id     = "subnet-09bb946c638fdd9a3"
+  security_groups = [
+    "nextgen-devops-sg",
+  ]
+}
+
+resource "null_resource" "example" {
+  provisioner "local-exec" {
+    command = "echo 'Hello World!' > /tmp/hello"
+  }
+}
+
+resource "aws_ebs" "example" {
+  count = 1
+
+  availability_zone = "us-east-1a"
+  volume_type        = "gp2"
+  size                 = 30
+}
+
+resource "aws_image" "example" {
+  name             = "example-image"
+  description       = "Example image"
+  owner_id          = "123456789012"
+  image_location    = "ami-0c7217cdde317cfec"
 }
