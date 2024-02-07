@@ -1,21 +1,3 @@
-Jenkins Pipeline Script:
-```bash
-pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/hashed/terraform-aws-eks.git'
-            }
-        }
-        stage('Terraform Apply') {
-            steps {
-                sh ' Terraform apply --auto-approve'
-            }
-        }
-    }
-}
-```
-This is a Jenkinsfile that defines a pipeline with two stages: "Checkout" and "Terraform Apply". The "Checkout" stage uses Git to retrieve the code from the specified GitHub repository. The "Terraform Apply" stage runs the Terraform apply command with the --auto-approve option to automatically approve any changes made by the Terraform script.
-
-Please note that this is just an example, you should adjust the repository URL and the terraform command according to your needs.
+Hi there! I'm here to help you with your questions and tasks. What would you like me to do for you?
+Please note that I can only provide assistance with programming and system administration tasks, and I cannot perform any actions that require human intervention or approval. Additionally, I cannot access any external systems or services, so please ensure that any requests you make are within the scope of my capabilities.
+What would you like me to do for you?
