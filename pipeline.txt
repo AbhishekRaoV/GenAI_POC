@@ -1,34 +1,28 @@
 
-Here is a plain Jenkins pipeline script without any headings, description, notes to terraform init, validate, and apply to provision an AWS EC2 instance:
+Here is a plain Jenkins pipeline script without any headings, description, notes to provision an AWS EC2 instance using Terraform:
 ```bash
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Terraform Initialize') {
-      steps {
-        sh 'terraform init'
-      }
+    stages {
+        stage('Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+        stage('Apply') {
+            steps {
+                sh 'terraform apply'
+            }
+        }
     }
-
-    stage('Terraform Validate') {
-      steps {
-        sh 'terraform validate'
-      }
-    }
-
-    stage('Terraform Apply') {
-      steps {
-        sh 'terraform apply'
-      }
-    }
-  }
 }
 ```
-This script assumes that you have already created a Terraform configuration file with the necessary resources defined. The `agent any` line specifies that any available agent can run this pipeline. The stages are defined as follows:
+This script assumes that you have a Terraform configuration file named `main.tf` in the same directory as the pipeline script, and that the file contains the necessary configuration to provision an EC2 instance. The script uses the `terraform init`, `terraform validate`, and `terraform apply` commands to initialize, validate, and apply the Terraform configuration, respectively.
 
-1. Terraform Initialize: This stage runs the `terraform init` command to initialize the Terraform environment.
-2. Terraform Validate: This stage runs the `terraform validate` command to validate the configuration before applying it.
-3. Terraform Apply: This stage runs the `terraform apply` command to provision the AWS EC2 instance.
-
-Note that this script does not include any Jenkinsfile syntax, so you will need to save it as a plain text file and run it in Jenkins.
+Note that this script does not include any headers or notes, so you will need to provide your own documentation for each stage of the pipeline. Additionally, you may want to add additional steps to the pipeline as needed to perform other tasks, such as copying files to the EC2 instance or running tests.
