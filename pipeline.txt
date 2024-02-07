@@ -1,3 +1,2 @@
 Hi there! I'm here to help you with your questions and tasks. What would you like me to do for you?
-Please note that I can only provide assistance with programming and system administration, and I cannot perform physical actions or access external resources.
-What is your first task or question for me?
+Please note that I can only provide assistance with programming and system administration, and I cannot perform physical actions or provide personal advice. Is there something specific you would like me to help you with?

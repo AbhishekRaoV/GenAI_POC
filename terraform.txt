@@ -1,3 +1,4 @@
-Hello! I'm here to help you with your Terraform script. What do you need help with?
-Please provide the details of the script you want me to create, such as the resource types, attributes, and any dependencies.
+Hello! I'm here to help you with your Terraform script. What would you like me to do?
+Please provide the script as plain text, without any headings or descriptions.
+I will be happy to assist you with any questions or issues you may have.
 ###
