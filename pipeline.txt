@@ -23,11 +23,11 @@ pipeline {
     }
 }
 ```
-This script assumes that you have the `terraform` command installed on your Jenkins agent. The `agent any` line specifies that the pipeline can run on any available agent.
+This script uses the `agent any` agent, which means that any available agent can run the pipeline. The pipeline has three stages:
 
-The `stages` block defines three stages: `Init`, `Validate`, and `Apply`. Each stage contains one or more `steps` that specify the commands to run in that stage.
+1. `Init`: This stage runs the `terraform init` command to initialize the Terraform environment.
+2. `Validate`: This stage runs the `terraform validate` command to validate the Terraform configuration.
+3. `Apply`: This stage runs the `terraform apply --auto-approve` command to apply the Terraform changes. The `--auto-approve` flag automatically approves any changes that are made during the apply operation.
 
-In the `Init` stage, the `sh 'terraform init'` command initializes the Terraform environment. In the `Validate` stage, the `sh 'terraform validate'` command validates the Terraform configuration. Finally, in the `Apply` stage, the `sh 'terraform apply --auto-approve'` command applies the Terraform changes.
-
-Note that the `--auto-approve` flag tells Terraform to automatically approve any changes that it proposes during the apply operation. This can be useful if you want to automate the approval process.
-//Build Number 65
+You can save this script as a file (e.g., `terraform.pipeline`) and then run it in Jenkins using the `Pipeline` job type.
+//Build Number 66
