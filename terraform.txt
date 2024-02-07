@@ -1,4 +1,16 @@
-Hello! I'm here to help you with your Terraform script. What would you like me to do?
-Please provide the script as plain text, without any headings or descriptions.
-I will be happy to assist you with any questions or issues you may have.
-###
+Hi there! I'm happy to help you with your Terraform script. Here is the script you requested:
+```
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c7217cdde317cfec"
+  instance_type = "t2.micro"
+  key_name      = "nextgen-devops-team"
+  subnet_id     = "subnet-09bb946c638fdd9a3"
+}
+```
+Please note that this script only provisions an EC2 instance and does not include any other resources or configurations. If you need additional resources or configurations, please let me know and I can assist you with those as well.
+
+Is there anything else you would like to add or modify in this script?
