@@ -26,6 +26,10 @@ pipeline {
     }
 }
 ```
-This pipeline script will run the `terraform init`, `terraform validate`, and `terraform apply` commands in sequence. The `terraform apply` command will use the `--auto-approve` flag to automatically approve any changes that need to be made.
+This pipeline script will run the following commands in each stage:
 
-Note that you will need to replace the `ami` and `instance_type` variables with the appropriate values for your environment. Additionally, you may need to modify the `agent` block to specify the Jenkins agent that should run this pipeline.
+1. `terraform init`: Initializes Terraform and creates a new working directory.
+2. `terraform validate`: Validates the Terraform configuration and ensures that it is correct and complete.
+3. `terraform apply --auto-approve`: Applies the Terraform changes to the AWS infrastructure. The `--auto-approve` flag automatically approves any changes that are required for the deployment.
+
+Note that you will need to replace the `assistant` label with the actual name of your Jenkins instance.
