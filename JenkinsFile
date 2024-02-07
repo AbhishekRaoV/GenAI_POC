@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve /path/to/config.tf

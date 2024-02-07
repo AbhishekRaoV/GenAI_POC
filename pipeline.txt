@@ -1,2 +1,29 @@
-Hello! I'm here to help you with your Jenkins pipeline script. Can you please provide the script without any headings, descriptions, or notes?
 
+Here is a Jenkins pipeline script without any headings, description, notes to provision an AWS EC2 instance using Terraform:
+```bash
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve
+```
+This script will initialize Terraform, validate the configuration, and apply the changes to provision an AWS EC2 instance using the `aws` provider. The `--auto-approve` flag is used to automatically approve any infrastructure changes made by Terraform.
+
+Note that this script assumes you have already created a Terraform configuration file with the necessary settings for your AWS EC2 instance. You will need to provide the path to this configuration file as an argument to the `terraform` command. For example:
+```bash
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve /path/to/config.tf
+```
