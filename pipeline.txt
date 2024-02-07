@@ -1,29 +1,15 @@
-Here is a plain Jenkins pipeline script without any headings, description, notes to terraform init, validate, and apply to provision an AWS EC2 instance:
-```bash
-pipeline {
-  agent any
-  
-  stages {
-    stage('Terraform Initialize') {
-      steps {
-        sh 'terraform init'
-      }
-    }
-    
-    stage('Terraform Validate') {
-      steps {
-        sh 'terraform validate'
-      }
-    }
-    
-    stage('Terraform Apply') {
-      steps {
-        sh 'terraform apply'
-      }
-    }
-  }
-}
-```
-This script assumes that you have already installed the AWS SDK and the Terraform provider on your Jenkins instance. It uses the `sh` step to run the Terraform commands, which will provision an EC2 instance using the `aws_instance` resource defined in your Terraform configuration.
 
-Note that this script does not include any error handling or logging, so you may want to add those features to your actual pipeline.
+Here is a plain Jenkins pipeline script without any headings, description, notes to terraform init, terraform validate, and terraform apply using --auto-approve for terraform apply to provision AWS EC2 instance:
+```bash
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve
+```
+This script will initialize Terraform, validate the configuration, and apply the changes using --auto-approve to provision an AWS EC2 instance.

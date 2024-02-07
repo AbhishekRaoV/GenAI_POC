@@ -1,23 +1,10 @@
-pipeline {
-  agent any
-  
-  stages {
-    stage('Terraform Initialize') {
-      steps {
-        sh 'terraform init'
-      }
-    }
-    
-    stage('Terraform Validate') {
-      steps {
-        sh 'terraform validate'
-      }
-    }
-    
-    stage('Terraform Apply') {
-      steps {
-        sh 'terraform apply'
-      }
-    }
-  }
-}
+#!/bin/bash
+
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Apply the changes with --auto-approve
+terraform apply --auto-approve
