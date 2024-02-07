@@ -1,4 +1,3 @@
-
 Here is a plain Jenkins pipeline script without any headings, description, notes to terraform init, terraform validate, and terraform apply using --auto-approve for terraform apply to provision AWS EC2 instance:
 ```bash
 #!/bin/bash
@@ -12,4 +11,4 @@ terraform validate
 # Apply the changes with --auto-approve
 terraform apply --auto-approve
 ```
-This script will initialize Terraform, validate the configuration, and apply the changes using --auto-approve to provision an AWS EC2 instance.
+
