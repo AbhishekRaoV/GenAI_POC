@@ -1,45 +1,28 @@
 
-Here is a plain Jenkins pipeline script without any headings, description, or notes to provision an AWS EC2 instance using Terraform:
+Here is a plain Jenkins pipeline script without any headings, description, notes to provision an AWS EC2 instance using Terraform:
 ```bash
-#!/bin/bash
+pipeline {
+    agent any
 
-provider "aws" {
-  region = "us-east-1"
-}
-
-resource "aws_instance" "example" {
-  ami           = "ami-0c7217cdde317cfec"
-  instance_type = "t2.micro"
-  key_name      = "nextgen-devops-team"
-  subnet_id     = "subnet-09bb946c638fdd9a3"
-  security_groups = [
-    "nextgen-devops-sg",
-  ]
-}
-
-resource "null_resource" "example" {
-  provisioner "local-exec" {
-    command = "echo 'Hello World!' > /tmp/hello"
-  }
-}
-
-resource "aws_ebs" "example" {
-  count = 1
-
-  availability_zone = "us-east-1a"
-  volume_type        = "gp2"
-  size                 = 30
-}
-
-resource "aws_image" "example" {
-  name             = "example-image"
-  description       = "Example image"
-  owner_id          = "123456789012"
-  image_location    = "ami-0c7217cdde317cfec"
+    stages {
+        stage('Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+        stage('Apply') {
+            steps {
+                sh 'terraform apply'
+            }
+        }
+    }
 }
 ```
-This script uses the `aws` provider to define an EC2 instance with a specific AMI, key pair, and security group. It also defines an EBS volume with a specific size. Finally, it defines an image resource with a name, description, owner ID, and image location.
+This script assumes that you have a Terraform configuration file named `main.tf` in the same directory as the pipeline script, and that the file contains the necessary configuration to provision an EC2 instance. The script initializes Terraform, validates the configuration, and then applies the changes to provision the EC2 instance.
 
-To apply this script using Jenkins, you can create a new free-form job and add the script as a build step. You can then configure the job to use the AWS plugin to execute the script on an EC2 instance.
-
-Note that this script assumes that you have already set up your AWS credentials on your Jenkins instance. If you haven't done so, you will need to configure your AWS credentials before running this script.
+Note that this script does not include any error handling or logging, so you may want to add those features if you plan to use this script in production. Additionally, you will need to replace `agent any` with the actual agent you want to use (e.g., `agent 'docker'` if you want to use a Docker agent).

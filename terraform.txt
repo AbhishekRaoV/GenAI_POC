@@ -1,18 +1,3 @@
-
-Here is a plain Terraform script without any headings, description, or notes to provision an AWS EC2 instance using the provided details:
-```bash
-provider "aws" {
-  region = "us-east-1"
-}
-
-resource "aws_instance" "example" {
-  ami           = "ami-0c7217cdde317cfec"
-  instance_type = "t2.micro"
-  key_name      = "nextgen-devops-team"
-  subnet_id     = "subnet-09bb946c638fdd9a3"
-  security_groups = [
-    "nextgen-devops-sg",
-  ]
-}
-```
-Note that this script assumes that you have already created the necessary AWS resources, such as the subnet and security group, and that you have a valid AWS access key and secret key.
+Hello! I'm here to help you with your Terraform script. What would you like me to do?
+Please provide the script as plain text, without any headings or descriptions.
+###
