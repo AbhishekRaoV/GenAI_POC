@@ -1,1 +1,25 @@
-//Build Number 70
+pipeline {
+    agent any
+
+    stages {
+        stage('Init') {
+            steps {
+                // Initialize Terraform
+                sh 'terraform init'
+            }
+        }
+        stage('Validate') {
+            steps {
+                // Validate the Terraform configuration
+                sh 'terraform validate'
+            }
+        }
+        stage('Apply') {
+            steps {
+                // Apply the Terraform changes
+                sh 'terraform apply --auto-approve'
+            }
+        }
+    }
+}
+//Build Number 71
