@@ -1,11 +1,6 @@
-Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating a plain Terraform script without any headings or notes.
+Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating the script.
 
-Please provide the following information:
+Please note that I will not store any data or information outside of our chat. All information provided will be used solely for the purpose of creating the Terraform script.
 
-1. AMI ID
-2. Instance type
-3. Key pair name
-4. Subnet ID
-
-Once you provide these details, I can help you create a Terraform script to provision an AWS EC2 instance using those specifications.
-#Build Number 75
+What is the AMI ID you would like to use for your EC2 instance?
+#Build Number 76
