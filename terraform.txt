@@ -1,6 +1,4 @@
-Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating the script.
-
-Please note that I will not store any data or information outside of our chat. All information provided will be used solely for the purpose of creating the Terraform script.
-
-What is the AMI ID you would like to use for your EC2 instance?
-#Build Number 76
+Hello! I'm here to help you with your Terraform script. What would you like me to do?
+Please provide the script and any additional details or requirements you have.
+###
+#Build Number 77
