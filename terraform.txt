@@ -1,3 +1,11 @@
 Hello! I'm here to help you with your Terraform script. Can you please provide me with the details you have so far?
 
-#Build Number 81
+Please provide the following information:
+
+1. AMI ID
+2. Instance type
+3. Key pair
+4. Subnet ID
+
+Once you provide these details, I can help you create a Terraform script to provision an AWS EC2 instance using those specifications.
+#Build Number 82
