@@ -1,4 +1,5 @@
 Hello! I'm here to help you with your Terraform script. What would you like me to do?
-Please provide the script and any additional details or requirements you have.
+Please provide the script as plain text, without any headings or descriptions.
+I'll be happy to assist you with any questions or issues you have.
 ###
-#Build Number 77
+#Build Number 78
