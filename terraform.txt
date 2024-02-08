@@ -4,8 +4,8 @@ Please provide the following information:
 
 1. AMI ID
 2. Instance type
-3. Key pair
+3. Key pair name
 4. Subnet ID
 
 Once you provide these details, I can help you create a Terraform script to provision an AWS EC2 instance using those specifications.
-#Build Number 82
+#Build Number 85
