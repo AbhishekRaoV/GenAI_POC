@@ -1,4 +1,4 @@
-Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating the script.
+Hello! I'm here to help you with your Terraform script. Please provide the details you'd like me to use, and I'll be happy to assist you in creating a plain Terraform script without any headings or notes.
 
 Please provide the following information:
 
@@ -7,5 +7,5 @@ Please provide the following information:
 3. Key pair name
 4. Subnet ID
 
-Once you provide these details, I can help you create a plain Terraform script without any headings, descriptions, or notes to provision an AWS EC2 instance using the provided details.
-#Build Number 73
+Once you provide these details, I can help you create a Terraform script to provision an AWS EC2 instance using those specifications.
+#Build Number 74
