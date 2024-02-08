@@ -1,0 +1,13 @@
+Hi there! I'm here to help you with your Terraform script. Can you please provide the details of the AWS EC2 instance you want to provision?
+
+Please provide the following information:
+
+1. AMI ID
+2. Instance type
+3. Key pair
+4. Subnet ID
+
+Once you provide these details, I can help you create a plain Terraform script without any headings, descriptions, or notes to provision the AWS EC2 instance.
+
+Go ahead and provide the details!
+#Build Number 72
