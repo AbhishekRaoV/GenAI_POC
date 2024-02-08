@@ -8,10 +8,10 @@ resource "aws_instance" "example" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   key_name      = "nextgen-devops-team"
-  subnet_id    = "subnet-09bb946c638fdd9a3"
+  subnet_id     = "subnet-09bb946c638fdd9a3"
 }
 ```
-Please note that this script only provisions an EC2 instance and does not create any additional resources such as a security group or an Elastic Block Store (EBS) volume. If you need these resources, please let me know and I can update the script accordingly.
+Note that this script only provisions an EC2 instance and does not create any additional resources such as a security group or an Elastic Block Store (EBS) volume. If you need these resources, you'll need to modify the script accordingly.
 
-Also, please note that the `ami` ID should be replaced with the actual ID of the AMI you want to use.
-#Build Number 90
+Also, note that the `ami` ID should be replaced with the actual ID of the Amazon Machine Image (AMI) you want to use.
+#Build Number 93

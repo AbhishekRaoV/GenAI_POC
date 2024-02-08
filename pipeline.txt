@@ -1,5 +1,5 @@
 
-Here is a Jenkins pipeline script that you can use to execute the Terraform script in an automated way:
+Here is a sample Jenkins pipeline script that you can use to execute the Terraform script in an automated way:
 ```
 pipeline {
   agent any
@@ -28,13 +28,9 @@ pipeline {
   }
 }
 ```
-This pipeline script will run the following commands in each stage:
+This pipeline script has three stages: `Init`, `Validate`, and `Apply`. In the `Init` stage, the `terraform init` command is run to initialize Terraform. In the `Validate` stage, the `terraform validate` command is run to validate the Terraform configuration. Finally, in the `Apply` stage, the `terraform apply --auto-approve` command is run to apply the changes.
 
-1. `terraform init`: This command initializes Terraform and sets up the environment for running the Terraform script.
-2. `terraform validate`: This command validates the Terraform configuration to ensure that it is correct and can be applied successfully.
-3. `terraform apply --auto-approve`: This command applies the Terraform changes to the AWS infrastructure, using the `--auto-approve` flag to automatically approve any necessary changes.
+Note that you'll need to replace the `sh` commands with the appropriate shell command for your environment.
 
-You can run this pipeline script in a Jenkins instance, or you can use a tool like Jenkins Pipeline Plugin for Eclipse, to run this script.
-
-Please note that you need to have the `terraform` command installed on your system, and you need to have the AWS credentials set up correctly, in order to run this script successfully.
-//Build Number 90
+I hope this helps! Let me know if you have any other questions.
+//Build Number 93
